@@ -3,18 +3,18 @@
 int main(){
   int size1, size2;
   printf("Enter size of first array : ");
-  scanf("%d", &size1);
+  scanf_s("%d", &size1);
   printf("Enter size of second array : ");
-  scanf("%d", &size2);
+  scanf_s("%d", &size2);
 
   int arr1[size1], arr2[size2];
   printf("Enter elements of first array : ");
   for(int i=0; i<size1; i++){
-    scanf("%d", &arr1[i]);
+    scanf_s("%d", &arr1[i]);
   }
   printf("Enter elements of second array : ");
   for(int i=0; i<size2; i++){
-    scanf("%d", &arr2[i]);
+    scanf_s("%d", &arr2[i]);
   }
   
   const int size3 = size1 + size2;
