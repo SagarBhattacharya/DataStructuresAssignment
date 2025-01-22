@@ -3,9 +3,9 @@
 int main(){
   int size1, size2;
   printf("Enter size of first array : ");
-  scanf_s("%d", &size1);
+  scanf("%d", &size1);
   printf("Enter size of second array : ");
-  scanf_s("%d", &size2);
+  scanf("%d", &size2);
 
   int arr1[size1], arr2[size2];
   printf("Enter elements of first array : ");
@@ -14,7 +14,7 @@ int main(){
   }
   printf("Enter elements of second array : ");
   for(int i=0; i<size2; i++){
-    scanf_s("%d", &arr2[i]);
+    scanf("%d", &arr2[i]);
   }
   
   const int size3 = size1 + size2;
