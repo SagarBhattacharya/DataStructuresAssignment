@@ -30,29 +30,27 @@ void freeList(Node* head) {
   head->next = NULL;
 }
 
-Node* previous(Node* head, int data){
+void insertSorted(Node* head, int data){
   Node* ptr = head;
   Node* ptr1 = head->next;
   while(ptr1 != NULL && ptr1->data < data){
       ptr = ptr->next;
       ptr1 = ptr1->next;
   }
-  return ptr;
+  Node* newnode = createNode(data);
+  newnode->next = ptr->next;
+  ptr->next = newnode;
 }
 
 int main(){
   Node* head = createNode(0);
-  Node* newnode, *curr;
   int data, size;
   printf("Enter No. of Elements you want to Insert : ");
   scanf("%d", &size);
   printf("Enter List Elements : ");
   for(int i = 0; i < size; i++){
       scanf("%d", &data);
-      newnode = createNode(data);
-      curr = previous(head, data);
-      newnode->next = curr->next;
-      curr->next = newnode;
+      insertSorted(head, data);
   }
 
   printf("Linked List : ");

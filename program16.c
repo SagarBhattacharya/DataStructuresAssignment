@@ -34,6 +34,8 @@ void convertToPostfix(char* infix, char* postfix){
         postfix[j++] = stack[top--];
       }
       top--;
+    }else if(infix[i] == ' '){
+      continue;
     }else{
       while(top != -1 && priority(stack[top]) >= priority(infix[i])){
         postfix[j++] = stack[top--];
@@ -50,7 +52,7 @@ void convertToPostfix(char* infix, char* postfix){
 int main(){
   char infix[100], postfix[100];
   printf("Enter the infix expression: ");
-  scanf("%s", infix);
+  scanf("%[^\n]s", infix);
   convertToPostfix(infix, postfix);
   printf("The postfix expression is: %s\n", postfix);
   return 0;

@@ -62,7 +62,7 @@ void interchangeOddEven(Node* head){
     }
 }
 
-void main(){
+int main(){
   Node* head = createNode(0);
   printf("Enter list elements in even number \n");
   createLinkedList(head);
@@ -75,4 +75,5 @@ void main(){
   
   freeList(head);
   free(head);
+  return 0;
 }
