@@ -7,10 +7,11 @@ void printArray(int size, int* arr) {
     printf("\n");
 }
 
-void merge(int mid, int size, int* arr){
+void merge(int start, int mid, int end, int* arr){
+  int size = end - start;
   int temp[size];
-  int i = 0, j = mid, k = 0;
-  while(i < mid && j < size){
+  int i = start, j = mid, k = 0;
+  while(i < mid && j < end){
     if(arr[i] < arr[j]){
       temp[k++] = arr[i++];
     }else{
@@ -18,16 +19,16 @@ void merge(int mid, int size, int* arr){
     }
   }
   while(i < mid) temp[k++] = arr[i++];
-  while(j < size) temp[k++] = arr[j++];
-  for(int i = 0; i < size; i++) arr[i] = temp[i];
+  while(j < end) temp[k++] = arr[j++];
+  for(int i = 0; i < size; i++) arr[start + i] = temp[i];
 }
 
-void mergeSortIterative(int size, int* arr){
+void mergeSortIterative(int size, int* arr) {
   for(int step = 1; step < size; step *= 2){
-    for(int i = 0; i < size - 1; i += 2 * step){
+    for(int i = 0; i < size; i += 2 * step){
       int mid = i + step < size ? i + step : size;
       int end = i + 2 * step < size ? i + 2 * step : size;
-      merge(mid, end, arr);
+      merge(i, mid, end, arr);
     }
   }
 }

@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-void swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 void printArray(int size, int* arr){
   for(int i = 0; i < size; i++){
     printf("%d ", arr[i]);

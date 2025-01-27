@@ -11,7 +11,7 @@ void merge(int mid, int size, int* arr){
   int temp[size];
   int i = 0, j = mid, k = 0;
   while(i < mid && j < size){
-    if(arr[i] < arr[j]){
+    if(arr[i] > arr[j]){
       temp[k++] = arr[i++];
     }else{
       temp[k++] = arr[j++];
